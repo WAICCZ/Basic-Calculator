@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div id="output" class="output">
+        <p></p>
+      </div>
+      <div id="customInput" class="custom-input"></div>
+      <input id="calculator" type="text" autocomplete="off" />
+    </div>
+    <main>
+      <table>
+        <tr>
+          <td
+            id="myDiv"
+            class="Bgreen angle"
+            colspan="2"
+            onclick="Changemode()"
+          >
+            <p>Rad</p>
+            <p>|</p>
+            <p>Deg</p>
+          </td>
+          <td class="gray" onclick="changeText(this)">!</td>
+          <td class="gray" onclick="changeText(this)">(</td>
+          <td class="gray" onclick="changeText(this)">)</td>
+          <td class="gray" onclick="changeText(this)">%</td>
+          <td onclick=" AC()" class="Bgreen">AC</td>
+        </tr>
+        <tr>
+          <td id="myBtn" class="Bgreen" onclick="Ins()">Ins</td>
+          <td class="gray" onclick="changeText(this)">sin</td>
+          <td class="gray" onclick="changeText(this)">ln</td>
+          <td onclick="changeText(this)">7</td>
+          <td onclick="changeText(this)">8</td>
+          <td onclick="changeText(this)">9</td>
+          <td onclick="changeText(this)" class="gray">/</td>
+        </tr>
+        <tr>
+          <td onclick="changeText(this)">π</td>
+          <td class="gray" onclick="changeText(this)">cos</td>
+          <td class="gray" onclick="changeText(this)">log</td>
+          <td onclick="changeText(this)">4</td>
+          <td onclick="changeText(this)">5</td>
+          <td onclick="changeText(this)">6</td>
+          <td onclick="changeText(this)" class="gray">*</td>
+        </tr>
+        <tr>
+          <td onclick="changeText(this)">e</td>
+          <td class="gray" onclick="changeText(this)">tan</td>
+          <td class="gray" onclick="changeText(this)">√</td>
+          <td onclick="changeText(this)">1</td>
+          <td onclick="changeText(this)">2</td>
+          <td onclick="changeText(this)">3</td>
+          <td onclick="changeText(this)" class="gray">-</td>
+        </tr>
+        <tr>
+          <td onclick="changeText(this)">ANS</td>
+          <td onclick="changeText(this)">EXP</td>
+          <td onclick="changeText(this)" class="gray">^</td>
+          <td onclick="changeText(this)">0</td>
+          <td onclick="changeText(this)">.</td>
+          <td onclick="input()" class="Bgreen">=</td>
+          <td onclick="changeText(this)" class="gray">+</td>
+        </tr>
+      </table>
+      <!-- The Modal -->
+      <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h1>Instruction</h1>
+          <p>
+            All buttons except the green button can be replaced by the first
+            word of the button.
+          </p>
+          <p>√ You can press r, π you can press p.</p>
+        </div>
+      </div>
+    </main>
+    <script src="js/js.js"></script>
+  </body>
+</html>
