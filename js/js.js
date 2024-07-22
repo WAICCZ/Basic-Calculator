@@ -14,6 +14,7 @@ const hiddenInput = document.getElementById("calculator");
 const equation = document.getElementById("output").querySelector("p");
 const allowedCharacters = "0123456789.()%/*-+!lL^scteEpAinoagXPNSπr√";
 const nallowedfirstCharacters = "inoagXPNS";
+const cantchar = "+-*/%(^";
 const operators2 = /[+\-*\/%(^]$/; // 正则表达式，用于匹配运算符
 const operators1 = /[+\-*\/%^)!]$/; // 正则表达式，用于匹配运算符
 hiddenInput.value = "";
@@ -57,6 +58,9 @@ customInput.addEventListener("click", () => {
 hiddenInput.addEventListener("keydown", function (event) {
   if (event.key === "Backspace" || event.key === "Delete") {
     event.preventDefault(); // Prevent the default action
+  } else if (event.key === "Enter") {
+    event.preventDefault();
+    input();
   }
 });
 // 当隐藏的输入框输入内容时，同步到自定义输入框中
@@ -285,7 +289,11 @@ function normalization(infix) {
 }
 
 function input() {
-  if (hiddenInput.value === "") {
+  if (
+    hiddenInput.value === "" ||
+    cantchar.includes(hiddenInput.value[hiddenInput.value.length - 1])
+  ) {
+    console.log(hiddenInput.value[hiddenInput.value.length - 1]);
     return;
   }
   infix = hiddenInput.value.split(""); // 將輸入的字串轉換為字元陣列
