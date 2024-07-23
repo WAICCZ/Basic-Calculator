@@ -289,6 +289,9 @@ function normalization(infix) {
 }
 
 function input() {
+  if (RightbracketSwitch > 0) {
+    return;
+  }
   if (
     hiddenInput.value === "" ||
     cantchar.includes(hiddenInput.value[hiddenInput.value.length - 1])
